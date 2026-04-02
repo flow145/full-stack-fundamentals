@@ -7,5 +7,14 @@
   </head>
   <body>
     <h1>Websocket example</h1>
+    <script>
+      let ws
+      const protocol = window.location.protocol === 'https' ? 'wss' : 'ws'
+      ws = new WebSocket(`${protocol}://${window.location.host}`)
+      
+      ws.onmessage = (event) => {
+        console.log(event.data)
+      }
+    </script>
   </body>
 </html>
